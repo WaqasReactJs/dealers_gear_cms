@@ -1,6 +1,7 @@
 import 'package:dealers_gear_cms/screens/add_vehicle_screen/add_vehicle_view.dart';
 import 'package:dealers_gear_cms/screens/dashboard_screen/dashboard_view.dart';
 import 'package:dealers_gear_cms/screens/leads_screen/leads_view.dart';
+import 'package:dealers_gear_cms/screens/leads_screen/leads_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -29,7 +30,7 @@ class BottomNavigationController extends GetxController {
       case 2:
         return AddVehicleView();
       case 3:
-        return LeadsView();
+        return LeadsViewScreen();
 
       default:
         return Container(

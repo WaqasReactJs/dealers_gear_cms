@@ -1,7 +1,9 @@
 import 'package:dealers_gear_cms/screens/bottom_navigation/bottom_navigation_viewmodel.dart';
+import 'package:dealers_gear_cms/screens/bottom_navigation/LeadsView .dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../leads_screen/leads_view.dart';
 import '../profile_screen/profile_view.dart';
 class BottomNavigationView extends StatelessWidget {
   BottomNavigationView({Key? key}) : super(key: key);
@@ -48,9 +50,14 @@ class BottomNavigationView extends StatelessWidget {
               colors: [Color(0xff2699D8), Color(0xff0DC7C6)]),
         ),
       ),
-      title: SizedBox(
-        height: 40,
-        child: Image.asset("assets/images/logo_neww.png"),
+      title: InkWell(
+        onTap: (){
+          Get.to(()=>LeadsViewScreen());
+        },
+        child: SizedBox(
+          height: 40,
+          child: Image.asset("assets/images/logo_neww.png"),
+        ),
       ),
       centerTitle: true,
       actions: [

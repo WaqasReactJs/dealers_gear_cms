@@ -8,4 +8,6 @@ class AddVehicleViewModel extends GetxController{
     selected.value = value;
   }
   List<String> list =["Mohsin","Hayat","Salman","Waqas"];
+
+
 }

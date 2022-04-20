@@ -23,27 +23,27 @@ class AddVehicleView extends StatelessWidget {
           child: Column(
             children: [
               txtfieldContainer(),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               twoButtonInRow(),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               pickImageContainer(),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
-                children: [
+                children: const [
                   Text(
                     "Factory",
                     style: TextStyle(fontSize: 20),
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               formContainer(),
@@ -96,7 +96,7 @@ class AddVehicleView extends StatelessWidget {
         Container(
           width: Get.width * 0.45,
           height: Get.height * 0.05,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             boxShadow: [
               BoxShadow(
                 color: Colors.black26,
@@ -111,7 +111,7 @@ class AddVehicleView extends StatelessWidget {
                 end: Alignment.centerRight,
                 colors: [Color(0xff2699D8), Color(0xff0DC7C6)]),
           ),
-          child: Center(
+          child: const Center(
               child: Text(
             "Decode Vin",
             style: TextStyle(color: Colors.white, fontSize: 18),
@@ -120,7 +120,7 @@ class AddVehicleView extends StatelessWidget {
         Container(
           width: Get.width * 0.45,
           height: Get.height * 0.05,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             boxShadow: [
               BoxShadow(
                 color: Colors.black26,
@@ -135,7 +135,7 @@ class AddVehicleView extends StatelessWidget {
                 end: Alignment.centerRight,
                 colors: [Color(0xff2699D8), Color(0xff0DC7C6)]),
           ),
-          child: Center(
+          child: const Center(
               child: Text(
             "Scan Vin",
             style: TextStyle(color: Colors.white, fontSize: 18),
@@ -148,7 +148,7 @@ class AddVehicleView extends StatelessWidget {
   Widget pickImageContainer() {
     return Container(
       height: 130,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         shape: BoxShape.circle,
         color: Colors.white,
         boxShadow: [
@@ -172,7 +172,7 @@ class AddVehicleView extends StatelessWidget {
               size: 50,
               color: Color(CommonColor.rightColor),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
@@ -200,19 +200,19 @@ class AddVehicleView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       "YEAR",
                       style: TextStyle(color: Colors.grey, fontSize: 10),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Container(
                       width: double.infinity,
-                      padding: EdgeInsets.only(left: 5),
+                      padding: EdgeInsets.only(left: 10),
                       decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(50)),
+                          borderRadius: BorderRadius.circular(40)),
                       child: Obx(() => DropdownButtonFormField(
                             isExpanded: true,
                             decoration: InputDecoration(
@@ -241,7 +241,7 @@ class AddVehicleView extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             Expanded(
@@ -249,16 +249,16 @@ class AddVehicleView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       "Make",
                       style: TextStyle(color: Colors.grey, fontSize: 10),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Container(
                       width: double.infinity,
-                      padding: EdgeInsets.only(left: 5),
+                      padding: EdgeInsets.only(left: 10),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(50)),
@@ -292,7 +292,7 @@ class AddVehicleView extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         //second row of form model field and trim field
@@ -300,32 +300,48 @@ class AddVehicleView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
-              child: TextField(
-                decoration: InputDecoration(hintText: "Model"),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xff0DC7C6)),
+                    ),
+                    labelText: 'Model',
+                    labelStyle: TextStyle(color: Colors.grey)),
               ),
             ),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Expanded(
-              child: TextField(
-                decoration: InputDecoration(hintText: "TRIM"),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xff0DC7C6)),
+                    ),
+                    labelText: 'TRIM',
+                    labelStyle: TextStyle(color: Colors.grey)),
               ),
-            ),
+            )
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         //Car details
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: [
+          children: const [
             Text(
               "Car Details",
               style: TextStyle(fontSize: 20),
             )
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         //third row of form MILEAGE field and MPG HIGHWAY
@@ -333,19 +349,35 @@ class AddVehicleView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
-              child: TextField(
-                decoration: InputDecoration(hintText: "MILEAGE"),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xff0DC7C6)),
+                    ),
+                    labelText: 'MILEAGE',
+                    labelStyle: TextStyle(color: Colors.grey)),
               ),
             ),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Expanded(
-              child: TextField(
-                decoration: InputDecoration(hintText: "MPG HIGHWAY"),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xff0DC7C6)),
+                    ),
+                    labelText: 'MPG HIGHWAY',
+                    labelStyle: TextStyle(color: Colors.grey)),
               ),
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         //fourth row of form MPG CITY  field and DISPLACEMENT field
@@ -353,19 +385,35 @@ class AddVehicleView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
-              child: TextField(
-                decoration: InputDecoration(hintText: "MPG CITY"),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xff0DC7C6)),
+                    ),
+                    labelText: 'MPG CITY',
+                    labelStyle: TextStyle(color: Colors.grey)),
               ),
             ),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Expanded(
-              child: TextField(
-                decoration: InputDecoration(hintText: "DISPLACEMENT"),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xff0DC7C6)),
+                    ),
+                    labelText: 'DISPLACEMENT',
+                    labelStyle: TextStyle(color: Colors.grey)),
               ),
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         //fifth row of form DOORS  field and CYLINDERS field
@@ -373,37 +421,53 @@ class AddVehicleView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
-              child: TextField(
-                decoration: InputDecoration(hintText: "DOORS"),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xff0DC7C6)),
+                    ),
+                    labelText: 'DOORS',
+                    labelStyle: TextStyle(color: Colors.grey)),
               ),
             ),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Expanded(
-              child: TextField(
-                decoration: InputDecoration(hintText: "CYLINDERS"),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xff0DC7C6)),
+                    ),
+                    labelText: 'CYLINDERS',
+                    labelStyle: TextStyle(color: Colors.grey)),
               ),
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         //Transmission text
         Row(
-          children: [
+          children: const [
             Text(
               "TRANSMISSION",
               style: TextStyle(color: Colors.grey, fontSize: 10),
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 5,
         ),
         //below tansmission dropdown
         Container(
           width: double.infinity,
-          padding: EdgeInsets.only(left: 5),
+          padding: EdgeInsets.only(left: 10),
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(50)),
           child: Obx(() => DropdownButtonFormField(
@@ -430,19 +494,19 @@ class AddVehicleView extends StatelessWidget {
                 }).toList(),
               )),
         ),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
         //car type text
         Row(
-          children: [
+          children: const [
             Text(
               "Car Type",
               style: TextStyle(color: Colors.grey, fontSize: 20),
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
         //FUEL TYPE txt and dropdown and BODY STYLE txt and dropdown
@@ -458,12 +522,12 @@ class AddVehicleView extends StatelessWidget {
                       "FUEL TYPE",
                       style: TextStyle(color: Colors.grey, fontSize: 10),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Container(
                       width: double.infinity,
-                      padding: EdgeInsets.only(left: 5),
+                      padding: EdgeInsets.only(left: 10),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(50)),
@@ -495,7 +559,7 @@ class AddVehicleView extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             Expanded(
@@ -503,16 +567,16 @@ class AddVehicleView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       "BODY STYLE",
                       style: TextStyle(color: Colors.grey, fontSize: 10),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Container(
                       width: double.infinity,
-                      padding: EdgeInsets.only(left: 5),
+                      padding: EdgeInsets.only(left: 10),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(50)),
@@ -546,7 +610,7 @@ class AddVehicleView extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
         //AUTO SIZE txt and dropdown and DRIVE TYPE txt and dropdown
@@ -558,16 +622,16 @@ class AddVehicleView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       "YEAR",
                       style: TextStyle(color: Colors.grey, fontSize: 10),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Container(
                       width: double.infinity,
-                      padding: EdgeInsets.only(left: 5),
+                      padding: EdgeInsets.only(left: 10),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(50)),
@@ -599,7 +663,7 @@ class AddVehicleView extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             Expanded(
@@ -607,16 +671,16 @@ class AddVehicleView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       "Make",
                       style: TextStyle(color: Colors.grey, fontSize: 10),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Container(
                       width: double.infinity,
-                      padding: EdgeInsets.only(left: 5),
+                      padding: EdgeInsets.only(left: 10),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(50)),
@@ -650,19 +714,19 @@ class AddVehicleView extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
         //DATE in stock text
         Row(
-          children: [
+          children: const [
             Text(
               "DATE IN STOCK",
               style: TextStyle(color: Colors.grey, fontSize: 10),
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         //6th form field row with DATE IN STOCK datepickerfield and STOCK NUMBER field
@@ -670,31 +734,37 @@ class AddVehicleView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
-              child: TextField(
-                decoration: InputDecoration(hintText: "DATE IN STOCK"),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                    border: UnderlineInputBorder(),
+                    labelText: 'DATE IN STOCK',
+                    labelStyle: TextStyle(color: Colors.grey)),
               ),
             ),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Expanded(
-              child: TextField(
-                decoration: InputDecoration(hintText: "STOCK NUMBER"),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                    border: UnderlineInputBorder(),
+                    labelText: 'STOCK NUMBER',
+                    labelStyle: TextStyle(color: Colors.grey)),
               ),
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         //Dealer Certified text
         Row(
-          children: [
+          children: const [
             Text(
               "DEALER CERTIFIED",
               style: TextStyle(color: Colors.grey, fontSize: 10),
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         //yes and no radio button
@@ -714,10 +784,10 @@ class AddVehicleView extends StatelessWidget {
                           genderSelctionController.onChangedGender(value);
                         }),
                   ),
-                  Text(
+                  const Text(
                     "Yes",
                     style: TextStyle(
-                      fontSize: 19,
+                      fontSize: 15,
                     ),
                   )
                 ],
@@ -736,10 +806,10 @@ class AddVehicleView extends StatelessWidget {
                           genderSelctionController.onChangedGender(value);
                         }),
                   ),
-                  Text(
+                  const Text(
                     "No",
                     style: TextStyle(
-                      fontSize: 19,
+                      fontSize: 15,
                     ),
                   )
                 ],
@@ -747,12 +817,12 @@ class AddVehicleView extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         //Visual Details text
         Row(
-          children: [
+          children: const [
             Text(
               "Visual Details",
               style: TextStyle(fontSize: 20),
@@ -771,7 +841,7 @@ class AddVehicleView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       "EXTERIOR COLOR",
                       style: TextStyle(color: Colors.grey, fontSize: 10),
                     ),
@@ -780,7 +850,7 @@ class AddVehicleView extends StatelessWidget {
                     ),
                     Container(
                       width: double.infinity,
-                      padding: EdgeInsets.only(left: 5),
+                      padding: EdgeInsets.only(left: 10),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(50)),
@@ -812,7 +882,7 @@ class AddVehicleView extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             Expanded(
@@ -820,16 +890,16 @@ class AddVehicleView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       "INTERIOR COLOR",
                       style: TextStyle(color: Colors.grey, fontSize: 10),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Container(
                       width: double.infinity,
-                      padding: EdgeInsets.only(left: 5),
+                      padding: EdgeInsets.only(left: 10),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(50)),
@@ -863,19 +933,19 @@ class AddVehicleView extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
         //Row of text CONDITION
         Row(
-          children: [
+          children: const [
             Text(
               "CONDITION",
               style: TextStyle(fontSize: 10, color: Colors.grey),
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         //New and Used radio button row
@@ -895,10 +965,10 @@ class AddVehicleView extends StatelessWidget {
                           genderSelctionController.onChangedGender(value);
                         }),
                   ),
-                  Text(
+                  const Text(
                     "New",
                     style: TextStyle(
-                      fontSize: 19,
+                      fontSize: 15,
                     ),
                   )
                 ],
@@ -917,10 +987,10 @@ class AddVehicleView extends StatelessWidget {
                           genderSelctionController.onChangedGender(value);
                         }),
                   ),
-                  Text(
+                  const Text(
                     "Used",
                     style: TextStyle(
-                      fontSize: 19,
+                      fontSize: 15,
                     ),
                   )
                 ],
@@ -929,12 +999,12 @@ class AddVehicleView extends StatelessWidget {
           ],
         ),
 
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         //Row of text STATUS
         Row(
-          children: [
+          children: const [
             Text(
               "STATUS",
               style: TextStyle(fontSize: 10, color: Colors.grey),
@@ -961,10 +1031,10 @@ class AddVehicleView extends StatelessWidget {
                           genderSelctionController.onChangedGender(value);
                         }),
                   ),
-                  Text(
+                  const Text(
                     "Live",
                     style: TextStyle(
-                      fontSize: 19,
+                      fontSize: 15,
                     ),
                   )
                 ],
@@ -983,10 +1053,10 @@ class AddVehicleView extends StatelessWidget {
                           genderSelctionController.onChangedGender(value);
                         }),
                   ),
-                  Text(
+                  const Text(
                     "In Prep",
                     style: TextStyle(
-                      fontSize: 19,
+                      fontSize: 15,
                     ),
                   )
                 ],
@@ -994,19 +1064,19 @@ class AddVehicleView extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         //Row of text Price Details
         Row(
-          children: [
+          children: const [
             Text(
               "Price Details",
               style: TextStyle(fontSize: 19),
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
 //Msrp and Selling Price text field
@@ -1014,19 +1084,35 @@ class AddVehicleView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
-              child: TextField(
-                decoration: InputDecoration(hintText: "MSRP"),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xff0DC7C6)),
+                    ),
+                    labelText: 'MSRP',
+                    labelStyle: TextStyle(color: Colors.grey)),
               ),
             ),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Expanded(
-              child: TextField(
-                decoration: InputDecoration(hintText: "SELLING PRICE"),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xff0DC7C6)),
+                    ),
+                    labelText: 'SELLING PRICE',
+                    labelStyle: TextStyle(color: Colors.grey)),
               ),
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         //INTERNET PRICE and INVOICE PRICE text field
@@ -1034,52 +1120,94 @@ class AddVehicleView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
-              child: TextField(
-                decoration: InputDecoration(hintText: "INTERNET PRICE"),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xff0DC7C6)),
+                    ),
+                    labelText: 'INTERNET PRICE',
+                    labelStyle: TextStyle(color: Colors.grey)),
               ),
             ),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Expanded(
-              child: TextField(
-                decoration: InputDecoration(hintText: "INVOICE PRICE"),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xff0DC7C6)),
+                    ),
+                    labelText: 'INVOICE PRICE',
+                    labelStyle: TextStyle(color: Colors.grey)),
               ),
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         //Details textfield row
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Expanded(
-            child: TextField(
-              decoration: InputDecoration(hintText: "DETAILS"),
+            child: TextFormField(
+              decoration: const InputDecoration(
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff0DC7C6)),
+                  ),
+                  labelText: 'DETAILS',
+                  labelStyle: TextStyle(color: Colors.grey)),
             ),
           ),
         ]),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         //CRAIGLIST ADD KEYWORD TXT FILED
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Expanded(
-            child: TextField(
-              decoration: InputDecoration(hintText: "CRAIGLIST ADD KEYWORD"),
+            child: TextFormField(
+              decoration: const InputDecoration(
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff0DC7C6)),
+                  ),
+                  labelText: 'CRAIGLIST ADD KEYWORD',
+                  labelStyle: TextStyle(color: Colors.grey)),
             ),
           ),
         ]),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         //CRAIGLIST TITLE TEXT FIELD
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Expanded(
-            child: TextField(
-              decoration: InputDecoration(hintText: "CRAIGLIST TITLE"),
+            child: TextFormField(
+              decoration: const InputDecoration(
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff0DC7C6)),
+                  ),
+                  labelText: 'CRAIGLIST TITLE',
+                  labelStyle: TextStyle(color: Colors.grey)),
             ),
           ),
         ]),
-        SizedBox(height: 15,),
+        const SizedBox(
+          height: 15,
+        ),
         //LAST BUTTON ADD VEHICLE
         Container(
           width: Get.width,
@@ -1099,13 +1227,15 @@ class AddVehicleView extends StatelessWidget {
                 end: Alignment.centerRight,
                 colors: [Color(0xff2699D8), Color(0xff0DC7C6)]),
           ),
-          child: Center(
+          child: const Center(
               child: Text(
-                "Add Vehicle",
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              )),
+            "Add Vehicle",
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          )),
         ),
-        SizedBox(height: 15,),
+        const SizedBox(
+          height: 15,
+        ),
       ],
     );
   }

@@ -143,8 +143,9 @@ class LoginView extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        Get.to(BottomNavigationView());
+
                         loginViewModel.checkLogin();
+                        //Get.to(BottomNavigationView());
                       },
                       child: Container(
                         width: Get.width,
